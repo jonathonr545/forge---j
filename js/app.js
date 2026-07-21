@@ -1121,7 +1121,7 @@ Store.saveActiveWorkout({
     const exLog = lastLog.exercises.find(e => e.id === exerciseId);
     if (!exLog || exLog.sets.length === 0) return null;
     const lastSet = exLog.sets[exLog.sets.length - 1];
-    const avgWeight = Math.round(exLog.sets.reduce((s, set) => s + set.weight, 0) / exLog.sets.length);
+    const maxWeight = Math.max(...exLog.sets.map(set => set.weight));
     return {
       weight: avgWeight,
       detail: `${exLog.sets.length}×${lastSet.repsDisplay || lastSet.reps}`
