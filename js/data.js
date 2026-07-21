@@ -1,24 +1,24 @@
-// FORGE — Upper/Lower Split Program Data Configuration
-// =====================================================
-// This file contains ALL exercise definitions, warm-ups, tips, and video links.
-// To add, remove, or modify exercises: edit this file only. No other code changes needed.
+// FORGE — 4-Day Split Program Data Configuration
+// =================================================
+// Lower A (Quads) / Push / Lower B (Posterior+Core) / Pull
+// To add, remove, or modify exercises: edit this file only.
 
 const FORGE_DATA = {
-  version: "1.0.0",
-  programName: "Upper/Lower",
+  version: "2.0.0",
+  programName: "4-Day Split",
 
   // *** CONFIGURE THESE after setting up your own Google Sheet ***
   sheetsWebhookUrl: "",
   sheetsViewUrl: "",
 
   cycleDays: [
-    { id: "lower",  name: "Lower",  type: "power",       label: "Lower + Core", color: "amber" },
-    { id: "upper",  name: "Upper",  type: "hypertrophy",  label: "Upper",        color: "cyan"  },
-    { id: "rest-1", name: "Rest",   type: "rest",         label: "Recovery",     color: "gray"  },
-    { id: "lower",  name: "Lower",  type: "power",       label: "Lower + Core", color: "amber" },
-    { id: "upper",  name: "Upper",  type: "hypertrophy",  label: "Upper",        color: "cyan"  },
-    { id: "rest-2", name: "Rest",   type: "rest",         label: "Recovery",     color: "gray"  },
-    { id: "rest-3", name: "Rest",   type: "rest",         label: "Recovery",     color: "gray"  }
+    { id: "lower-a", name: "Lower A", type: "power",        label: "Quads",               color: "amber" },
+    { id: "push",    name: "Push",    type: "hypertrophy",  label: "Chest/Shoulders/Tri", color: "cyan"  },
+    { id: "rest-1",  name: "Rest",    type: "rest",         label: "Recovery",            color: "gray"  },
+    { id: "lower-b", name: "Lower B", type: "power",        label: "Posterior + Core",    color: "amber" },
+    { id: "pull",    name: "Pull",    type: "hypertrophy",  label: "Back/Rear Delts/Bi",  color: "cyan"  },
+    { id: "rest-2",  name: "Rest",    type: "rest",         label: "Recovery",            color: "gray"  },
+    { id: "rest-3",  name: "Rest",    type: "rest",         label: "Recovery",            color: "gray"  }
   ],
 
   rpeGuide: {
@@ -35,15 +35,15 @@ const FORGE_DATA = {
 
   workouts: {
     // =========================================================
-    // LOWER + CORE
+    // LOWER A — QUAD DOMINANT
     // =========================================================
-    "lower": {
-      id: "lower",
-      name: "Lower + Core",
+    "lower-a": {
+      id: "lower-a",
+      name: "Lower A",
       type: "power",
-      label: "Lower + Core",
-      goal: "Legs, posterior chain, core stability, spinal health",
-      estimatedMinutes: 70,
+      label: "Quads",
+      goal: "Quad strength, unilateral balance, hamstring maintenance",
+      estimatedMinutes: 50,
       warmup: {
         name: "Dynamic Warm-Up",
         duration: "5 minutes",
@@ -52,7 +52,7 @@ const FORGE_DATA = {
           "Bodyweight squats, 10 slow reps focusing on depth",
           "Hip circles, 8 each direction per leg",
           "Glute bridges, 10 reps with squeeze at top",
-          "Cat-cow stretches, 8 slow reps through full spinal range"
+          "Walking knee hugs, 10 steps"
         ]
       },
       exercises: [
@@ -71,17 +71,17 @@ const FORGE_DATA = {
           isFinisher: false
         },
         {
-          id: "db-romanian-deadlift",
-          name: "Dumbbell Romanian Deadlift",
+          id: "walking-lunges",
+          name: "Walking Lunges (DB)",
           sets: 3,
-          reps: "10-12",
-          rpe: "7-8",
+          reps: "10 each",
+          rpe: "8",
           rest: 90,
           restLabel: "90 sec",
           weightMode: "free",
-          image: "db-romanian-deadlift.png",
-          video: "https://www.youtube.com/watch?v=FQKfr1YDhEk",
-          tip: "Dumbbells stay close to the legs. Push the hips back until you feel a strong hamstring stretch, then drive hips forward to stand. Stop at mid-shin if you feel any nerve symptoms. Slight knee bend that stays constant throughout the rep. Lighter than barbell, easier to bail, better range control.",
+          image: "walking-lunges.png",
+          video: "https://www.youtube.com/watch?v=L8fvypPrzzs",
+          tip: "Dumbbells at sides. Long stride, upright torso, back knee kisses floor. Unilateral work exposes and fixes imbalances. Moderate weight, quality steps.",
           isFinisher: false
         },
         {
@@ -109,7 +109,169 @@ const FORGE_DATA = {
           weightMode: "free",
           image: "lying-leg-curl.png",
           video: "https://www.youtube.com/watch?v=1Tq3QdYUuHs",
-          tip: "Squeeze hard at peak contraction, three-count negative on every rep. Don't let hips lift off the pad. DB RDLs load hamstrings stretched; leg curl loads them shortened. You need both.",
+          tip: "Squeeze hard at peak contraction, three-count negative on every rep. Don't let hips lift off the pad. Keeps hamstring stimulus in the week even on quad day.",
+          isFinisher: false
+        },
+        {
+          id: "cable-crunches",
+          name: "Cable Crunches",
+          sets: 3,
+          reps: "12-15",
+          rpe: "8-9",
+          rest: 60,
+          restLabel: "60 sec",
+          weightMode: "free",
+          image: "cable-crunches.png",
+          video: "https://www.youtube.com/watch?v=AV5PmZJIrrw",
+          tip: "Kneel facing the cable, rope behind your head. Crunch by curling your spine, bringing elbows toward knees. Hips stay locked in place. Think about pulling your ribcage toward your pelvis. If your hips are moving, the weight is too heavy.",
+          isFinisher: false
+        }
+      ]
+    },
+
+    // =========================================================
+    // PUSH — CHEST, SHOULDERS, TRICEPS
+    // =========================================================
+    "push": {
+      id: "push",
+      name: "Push",
+      type: "hypertrophy",
+      label: "Chest/Shoulders/Tri",
+      goal: "Chest, shoulders, triceps — all pressing movements",
+      estimatedMinutes: 45,
+      warmup: {
+        name: "Dynamic Warm-Up",
+        duration: "5 minutes",
+        movements: [
+          "Arm circles, 10 each direction",
+          "Band pull-aparts, 15 reps",
+          "Scapular push-ups, 10 reps",
+          "Light dumbbell press, 10-12 reps to prime the shoulders"
+        ]
+      },
+      exercises: [
+        {
+          id: "db-flat-bench",
+          name: "Dumbbell Flat Bench Press",
+          sets: 4,
+          reps: "8-10",
+          rpe: "8",
+          rest: 90,
+          restLabel: "90 sec",
+          weightMode: "free",
+          image: "db-flat-bench.png",
+          video: "https://www.youtube.com/watch?v=Y_7aHqXeCfQ",
+          tip: "Plant the feet, retract the shoulder blades, control the descent to chest, press up without clanking the dumbbells together. Dumbbells before barbell: build the stabilizer strength and movement pattern first, then graduate to the bar when ready.",
+          isFinisher: false
+        },
+        {
+          id: "db-incline-press",
+          name: "Dumbbell Incline Press",
+          sets: 3,
+          reps: "10-12",
+          rpe: "8-9",
+          rest: 75,
+          restLabel: "75 sec",
+          weightMode: "free",
+          image: "db-incline-press.png",
+          video: "https://www.youtube.com/watch?v=8iPEnn-ltC8",
+          tip: "Set bench to 30-degree incline. Three-count descent on every rep. Squeeze at the top without clanking the dumbbells. Shifts emphasis to upper chest and front delts, filling in what flat bench doesn't hit as hard.",
+          isFinisher: false
+        },
+        {
+          id: "seated-shoulder-press",
+          name: "Seated Machine Shoulder Press",
+          sets: 3,
+          reps: "8-10",
+          rpe: "8",
+          rest: 75,
+          restLabel: "75 sec",
+          weightMode: "free",
+          image: "seated-shoulder-press.png",
+          video: "https://www.youtube.com/watch?v=GcY6TZxfS0k",
+          tip: "Back flat against the pad. Press to near-lockout, don't fully lock the elbows. The machine's fixed path supports the spine, no compression like standing OHP. Drive through the shoulders, not the traps.",
+          isFinisher: false
+        },
+        {
+          id: "db-lateral-raise",
+          name: "Dumbbell Lateral Raises",
+          sets: 3,
+          reps: "12-15",
+          rpe: "8-9",
+          rest: 60,
+          restLabel: "60 sec",
+          weightMode: "free",
+          image: "db-lateral-raise.png",
+          video: "https://www.youtube.com/watch?v=3VcKaXpzqRo",
+          tip: "Slight forward lean, thumbs tilted slightly down (like pouring water). Controlled up, slow down. Don't ego-lift these. Feel the burn at rep 10, fight for 15.",
+          isFinisher: false
+        },
+        {
+          id: "tricep-pushdown",
+          name: "Tricep Pushdowns",
+          sets: 3,
+          reps: "12-15",
+          rpe: "9",
+          rest: 60,
+          restLabel: "60 sec",
+          weightMode: "free",
+          image: "tricep-pushdown.png",
+          video: "https://www.youtube.com/watch?v=2-LAMcpzODU",
+          tip: "Elbows pinned to the sides. Full extension at the bottom, controlled return. Don't let the elbows drift forward. Triceps are already pre-fatigued from pressing, so these finish them off.",
+          isFinisher: false
+        },
+        {
+          id: "push-ups",
+          name: "Push-Ups",
+          sets: 2,
+          reps: "to failure",
+          rpe: "-",
+          rest: 60,
+          restLabel: "60 sec",
+          weightMode: "bw",
+          image: "push-ups.png",
+          video: "https://www.youtube.com/watch?v=vh72hbUqqfs",
+          tip: "Standard push-ups, full range of motion. Body in a straight plank line, chest to near-floor, drive up. Quality reps, don't let the hips sag. When hitting 25+ reps on both sets, progress to diamond push-ups for more tricep emphasis.",
+          isFinisher: true,
+          finisherProgression: "Building pressing endurance and stability. Standard push-ups to diamond to decline to one-arm progressions over time."
+        }
+      ]
+    },
+
+    // =========================================================
+    // LOWER B — POSTERIOR CHAIN + CORE
+    // =========================================================
+    "lower-b": {
+      id: "lower-b",
+      name: "Lower B",
+      type: "power",
+      label: "Posterior + Core",
+      goal: "Posterior chain, spinal erectors, core stability, decompression",
+      estimatedMinutes: 55,
+      warmup: {
+        name: "Dynamic Warm-Up",
+        duration: "5 minutes",
+        movements: [
+          "Leg swings front to back, 10 each direction",
+          "Hip circles, 8 each direction per leg",
+          "Glute bridges, 10 reps with squeeze at top",
+          "Cat-cow stretches, 8 slow reps through full spinal range",
+          "Bodyweight Romanian deadlifts, 8 reps feeling the hamstring stretch"
+        ]
+      },
+      exercises: [
+        {
+          id: "db-romanian-deadlift",
+          name: "Dumbbell Romanian Deadlift",
+          sets: 4,
+          reps: "10-12",
+          rpe: "7-8",
+          rest: 90,
+          restLabel: "90 sec",
+          weightMode: "free",
+          image: "db-romanian-deadlift.png",
+          video: "https://www.youtube.com/watch?v=FQKfr1YDhEk",
+          tip: "Dumbbells stay close to the legs. Push the hips back until you feel a strong hamstring stretch, then drive hips forward to stand. Stop at mid-shin if you feel any nerve symptoms. Slight knee bend that stays constant throughout the rep. Lighter than barbell, easier to bail, better range control.",
           isFinisher: false
         },
         {
@@ -127,31 +289,17 @@ const FORGE_DATA = {
           isFinisher: false
         },
         {
-          id: "walking-lunges",
-          name: "Walking Lunges (DB)",
+          id: "lying-leg-curl",
+          name: "Lying Leg Curl",
           sets: 3,
-          reps: "10 each",
-          rpe: "8",
-          rest: 90,
-          restLabel: "90 sec",
-          weightMode: "free",
-          image: "walking-lunges.png",
-          video: "https://www.youtube.com/watch?v=L8fvypPrzzs",
-          tip: "Dumbbells at sides. Long stride, upright torso, back knee kisses floor. Unilateral work exposes and fixes imbalances. Moderate weight, quality steps.",
-          isFinisher: false
-        },
-        {
-          id: "cable-crunches",
-          name: "Cable Crunches",
-          sets: 3,
-          reps: "12-15",
+          reps: "10-12",
           rpe: "8-9",
           rest: 60,
           restLabel: "60 sec",
           weightMode: "free",
-          image: "cable-crunches.png",
-          video: "https://www.youtube.com/watch?v=AV5PmZJIrrw",
-          tip: "Kneel facing the cable, rope behind your head. Crunch by curling your spine, bringing elbows toward knees. Hips stay locked in place. Think about pulling your ribcage toward your pelvis. If your hips are moving, the weight is too heavy.",
+          image: "lying-leg-curl.png",
+          video: "https://www.youtube.com/watch?v=1Tq3QdYUuHs",
+          tip: "Squeeze hard at peak contraction, three-count negative on every rep. Don't let hips lift off the pad. DB RDLs load hamstrings stretched; leg curl loads them shortened. You need both.",
           isFinisher: false
         },
         {
@@ -188,38 +336,38 @@ const FORGE_DATA = {
     },
 
     // =========================================================
-    // UPPER (PUSH + PULL + ARMS)
+    // PULL — BACK, REAR DELTS, BICEPS
     // =========================================================
-    "upper": {
-      id: "upper",
-      name: "Upper",
+    "pull": {
+      id: "pull",
+      name: "Pull",
       type: "hypertrophy",
-      label: "Upper",
-      goal: "Chest, back, shoulders, arms — full upper body",
-      estimatedMinutes: 80,
+      label: "Back/Rear Delts/Bi",
+      goal: "Back thickness, lat width, rear delts, biceps",
+      estimatedMinutes: 45,
       warmup: {
         name: "Dynamic Warm-Up",
         duration: "5 minutes",
         movements: [
           "Arm circles, 10 each direction",
           "Band pull-aparts, 15 reps",
-          "Scapular push-ups, 10 reps",
+          "Scapular pull-ups or hangs, 8 reps",
           "Light cable rows, 10-12 reps to wake up the lats"
         ]
       },
       exercises: [
         {
-          id: "db-flat-bench",
-          name: "Dumbbell Flat Bench Press",
-          sets: 4,
-          reps: "8-10",
+          id: "pull-ups",
+          name: "Pull-Ups",
+          sets: 3,
+          reps: "6-10",
           rpe: "8",
           rest: 90,
           restLabel: "90 sec",
-          weightMode: "free",
-          image: "db-flat-bench.png",
-          video: "https://www.youtube.com/watch?v=Y_7aHqXeCfQ",
-          tip: "Plant the feet, retract the shoulder blades, control the descent to chest, press up without clanking the dumbbells together. Dumbbells before barbell: build the stabilizer strength and movement pattern first, then graduate to the bar when ready.",
+          weightMode: "bw",
+          image: "pull-ups.png",
+          video: "https://www.youtube.com/watch?v=eGo4IYlbE5g",
+          tip: "Full dead hang at the bottom, chin over bar at the top. If bodyweight pull-ups aren't solid at 6+ reps yet, use the assisted pull-up machine or do lat pulldowns at the same rep scheme instead. Quality reps over ego reps.",
           isFinisher: false
         },
         {
@@ -237,34 +385,6 @@ const FORGE_DATA = {
           isFinisher: false
         },
         {
-          id: "pull-ups",
-          name: "Pull-Ups",
-          sets: 3,
-          reps: "6-10",
-          rpe: "8",
-          rest: 90,
-          restLabel: "90 sec",
-          weightMode: "bw",
-          image: "pull-ups.png",
-          video: "https://www.youtube.com/watch?v=eGo4IYlbE5g",
-          tip: "Full dead hang at the bottom, chin over bar at the top. If bodyweight pull-ups aren't solid at 6+ reps yet, use the assisted pull-up machine or do lat pulldowns at the same rep scheme instead. Quality reps over ego reps.",
-          isFinisher: false
-        },
-        {
-          id: "seated-shoulder-press",
-          name: "Seated Machine Shoulder Press",
-          sets: 3,
-          reps: "8-10",
-          rpe: "8",
-          rest: 75,
-          restLabel: "75 sec",
-          weightMode: "free",
-          image: "seated-shoulder-press.png",
-          video: "https://www.youtube.com/watch?v=GcY6TZxfS0k",
-          tip: "Back flat against the pad. Press to near-lockout, don't fully lock the elbows. The machine's fixed path supports the spine, no compression like standing OHP. Drive through the shoulders, not the traps.",
-          isFinisher: false
-        },
-        {
           id: "wide-lat-pulldown",
           name: "Lat Pulldown",
           sets: 3,
@@ -276,20 +396,6 @@ const FORGE_DATA = {
           image: "wide-lat-pulldown.png",
           video: "https://www.youtube.com/watch?v=CAwf7n6Luuc",
           tip: "Pull to upper chest, not behind neck. Lean back slightly. Drive elbows down toward hips. Slow negative on every rep. Complements pull-ups by hitting the lats through a different angle and adding volume after the compound work.",
-          isFinisher: false
-        },
-        {
-          id: "db-incline-press",
-          name: "Dumbbell Incline Press",
-          sets: 3,
-          reps: "10-12",
-          rpe: "8-9",
-          rest: 75,
-          restLabel: "75 sec",
-          weightMode: "free",
-          image: "db-incline-press.png",
-          video: "https://www.youtube.com/watch?v=8iPEnn-ltC8",
-          tip: "Set bench to 30-degree incline. Three-count descent on every rep. Squeeze at the top without clanking the dumbbells. Shifts emphasis to upper chest and front delts, filling in what flat bench doesn't hit as hard.",
           isFinisher: false
         },
         {
@@ -307,34 +413,6 @@ const FORGE_DATA = {
           isFinisher: false
         },
         {
-          id: "db-lateral-raise",
-          name: "Dumbbell Lateral Raises",
-          sets: 3,
-          reps: "12-15",
-          rpe: "8-9",
-          rest: 60,
-          restLabel: "60 sec",
-          weightMode: "free",
-          image: "db-lateral-raise.png",
-          video: "https://www.youtube.com/watch?v=3VcKaXpzqRo",
-          tip: "Slight forward lean, thumbs tilted slightly down (like pouring water). Controlled up, slow down. Don't ego-lift these. Feel the burn at rep 10, fight for 15.",
-          isFinisher: false
-        },
-        {
-          id: "tricep-pushdown",
-          name: "Tricep Pushdowns",
-          sets: 3,
-          reps: "12-15",
-          rpe: "9",
-          rest: 60,
-          restLabel: "60 sec",
-          weightMode: "free",
-          image: "tricep-pushdown.png",
-          video: "https://www.youtube.com/watch?v=2-LAMcpzODU",
-          tip: "Elbows pinned to the sides. Full extension at the bottom, controlled return. Don't let the elbows drift forward.",
-          isFinisher: false
-        },
-        {
           id: "db-hammer-curls",
           name: "Dumbbell Hammer Curls",
           sets: 3,
@@ -345,23 +423,24 @@ const FORGE_DATA = {
           weightMode: "free",
           image: "db-hammer-curls.png",
           video: "https://www.youtube.com/watch?v=zC3nLlEvin4",
-          tip: "Neutral grip (palms facing each other). Alternating or simultaneous. Controlled, no swinging. Hits brachialis and brachioradialis for arm thickness and forearm development.",
+          tip: "Neutral grip (palms facing each other). Alternating or simultaneous. Controlled, no swinging. Hits brachialis and brachioradialis for arm thickness and forearm development. Biceps are pre-fatigued from all the pulling, so these finish them off.",
           isFinisher: false
         },
         {
-          id: "push-ups",
-          name: "Push-Ups",
+          id: "dead-hang",
+          name: "Dead Hangs",
           sets: 2,
-          reps: "to failure",
+          reps: "max time",
           rpe: "-",
           rest: 60,
           restLabel: "60 sec",
           weightMode: "bw",
-          image: "push-ups.png",
-          video: "https://www.youtube.com/watch?v=vh72hbUqqfs",
-          tip: "Standard push-ups, full range of motion. Body in a straight plank line, chest to near-floor, drive up. Quality reps, don't let the hips sag. When hitting 25+ reps on both sets, progress to diamond push-ups for more tricep emphasis.",
+          trackMode: "time",
+          image: "dead-hang.png",
+          video: "https://www.youtube.com/watch?v=wPmGMqaKhJo",
+          tip: "Full grip, shoulders engaged (not shrugging up to the ears). You're already warmed up from pull-ups, so grip should be primed. Spinal decompression after a full pulling session. Track your times.",
           isFinisher: true,
-          finisherProgression: "Building pressing endurance and stability. Standard push-ups to diamond to decline to one-arm progressions over time."
+          finisherProgression: "Dead hangs develop grip endurance, scapular stability, and provide therapeutic spinal decompression."
         }
       ]
     }
